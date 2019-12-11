@@ -65,14 +65,17 @@ function whichSectionIsInViewPort() {
   return minIndex;
 }
 //Add and remove "your-active-class" based on which section is active
+//Also adding border to the active index
 function activateIndex() {
   const sections = document.querySelectorAll(".landing__container");
   let minIndex = whichSectionIsInViewPort();
   for (i = 0; i < sections.length; i++) {
     if (i == minIndex) {
       sections[i].parentNode.classList.add("your-active-class");
+      sections[i].parentNode.style.border = "thin dotted red";
     } else {
       sections[i].parentNode.classList.remove("your-active-class");
+      sections[i].parentNode.style.border = "none";
     }
   }
 }
